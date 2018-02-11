@@ -1204,13 +1204,13 @@ int xavp_decode(ei_x_buff *xbuff, int *index, sr_xavp_t **xavp,int level)
 		LM_ERR("unknown type %c(%d)\n",(char)type,type);
 	}
 
-	pkg_free(pbuf);
-	free(p);
+	if (pbuf) pkg_free(pbuf);
+	if (p) free(p);
 	return 0;
 
 err:
-	pkg_free(pbuf);
-	free(p);
+	if (pbuf) pkg_free(pbuf);
+	if (p) free(p);
 	return -1;
 }
 
