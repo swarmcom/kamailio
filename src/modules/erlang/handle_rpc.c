@@ -1375,7 +1375,7 @@ static int get_str(str *str_ptr, erl_rpc_ctx_t *ctx, int reads, int autoconvert)
 		return -1;
 	}
 
-	LM_ERR("parameter #%d:<%.*s>\n",reads,STR_FMT(str_ptr));
+	LM_DBG("parameter #%d:<%.*s>\n",reads,STR_FMT(str_ptr));
 
 	return 0;
 }
